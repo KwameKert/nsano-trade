@@ -21,7 +21,7 @@
     font-size: 50px;
     font-weight: 900;
 ">$200,000 </span> <br/> a day and pay no charge for any subsequent transaction.</h2>
-<button class="btn btn-outline-warning">Learn more </button>
+<button class="btn btn-outline-warning" data-toggle="modal" data-target="#exampleModal" >Learn more </button>
      </div>
    </div>
 
@@ -85,10 +85,10 @@
       
      </div>
    
-   <div class="footer mt-5 p-3">
+   <div class="footer mt-5 p-2">
      <div class="row">
        <div class="col-md-10">
-<p style="color: white" class="text-bold"> <span style="margin-left: 250px;"><font-awesome-icon icon="envelope"  /> : trade@nsano.com </span>  <span style="margin-left: 50px;">  <font-awesome-icon icon="phone-alt"  /> : +233 2324234 </span> </p>
+<p style="color: white; margin-top:15px" class="text-bold"> <span style="margin-left: 350px;"><font-awesome-icon icon="envelope"  /> : trade@nsano.com </span>  <span style="margin-left: 50px;">  <font-awesome-icon icon="phone-alt"  /> : +233 2324234 </span> </p>
        </div>
 
        <div class="col-md-2 float-right">
@@ -168,7 +168,7 @@
   }
 
   .footer{
-     background-image: url("assets/footer4.png") ;
+     background-image: url("assets/footer44.png") ;
   }
 
   .iCountUp {
