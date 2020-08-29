@@ -15,7 +15,7 @@
    
    <div class="row">
      <div class="col-md-8 text-left" style="margin-left: 90px" >
-       <h2 >Send up to <span style="
+       <h2 style="font-size: 40px">Send up to <span style="
     color: #f08f21;
     font-size: 50px;
     font-weight: 900;
@@ -94,8 +94,8 @@
        </div>
 
        <div class="col-md-2 float-right">
-         <img src="@/assets/bog.png" alt="" width="50px" height="50px" class="mr-3">
-         <img src="@/assets/iso.png" alt="" width="50px" height="50px">
+         <img src="@/assets/bog2.png" alt="" width="70px" height="70px" class="mr-3">
+         <img src="@/assets/logonew.png" alt="" width="40px" height="45px">
        </div>
      </div>
      
@@ -164,9 +164,11 @@
 
 
 <style scoped>
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
   *{
     overflow-x:hidden;
-  
+    font-family: 'Montserrat', sans-serif;
   }
 
 
@@ -185,7 +187,7 @@
   }
 
   .footer{
-     background-image: url("assets/footer44.png") ;
+     background-image: url("assets/extraFooter.png") ;
 
     margin-top:80px;
   }
@@ -209,8 +211,8 @@
 
 .btn-warning {
     color: #fff;
-    border-color: #f4ab58;
-    background-color: #f4ab58;
+    border-color: #f18f22;
+    background-color: #f18f22;
     border-radius: 15px;
 
     
@@ -228,10 +230,10 @@
 }
 
 
-.btn-outline-warning:hover {
-    color: #fff;
-    background-color: #f4ab58;
-    border-color: #f4ab58;
+.btn-warning:hover {
+    color: #f18f22;
+    background-color: #fff;
+    border-color: #f18f22;
 }
 
 
@@ -284,16 +286,16 @@ header ul {
   }
 
   .logo{
-        margin: 170px 0px 0px 100px;
+        margin: 220px 0px 0px 135px;
         color: #f08f21;
         font-weight: 900;
   }
 
   .cool{
-   background-image: url("assets/circle3.png") ;
-   height: 460px;
-  margin-top: -120px;
-   
+   background-image: url("assets/nicelogo.png") ;
+   height: 500px;
+    margin-top: -170px;
+   margin-left:-20px;
   }
 
 
