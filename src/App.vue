@@ -56,17 +56,18 @@
    </div>
 
    <div class="row" style="margin-top:-200px">
-     <div class="col-md-8  col-sm-12 jumbotron"  >
-       <h2 style="font-size: 40px">Send up to <span style="
-    color: #f08f21;
-    font-size: 50px;
-    font-weight: 900;
-">$100,000 </span> <br/> a day and pay no charge for any subsequent transaction.</h2>
-<button class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" >Learn more </button>
-     </div>
+        <div class="col-md-8  col-sm-12 jumbotron"  >
+          <h2 style="font-size: 40px">Send up to <span style="
+        color: #f08f21;
+        font-size: 50px;
+        font-weight: 900;
+        ">$100,000 </span> <br/> a day and pay no charge for any subsequent transaction.</h2>
+        <button class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" >Learn more </button>
+        </div>
    </div>
-      <div class="row " style="margin-left: 72px; margin-top: 70px">
-       <div class="col-md-3">
+
+      <div class="row statistics" >
+       <div class="col-md-3 col-sm-8 stat">
          <div class="card">
            <div class="card-body text-align-left pb-0" @mouseover="transactionHover = true"
               @mouseleave="transactionHover = false" > 
@@ -80,7 +81,7 @@
                  @ready="startCount(1000000045)"
               />   -->
               2,348,314,962
-             <img src="@/assets/icons/transaction.png" alt="" class="ml-4 " width="45px" height="45px"></p>
+             <img src="@/assets/icons/transaction.png"  alt="" class=" img-transaction-stat " width="45px" height="45px"></p>
              <span style="color:#f08f21; text-align: left ">Transaction</span>
              </div>
 
@@ -95,7 +96,7 @@
                  @ready="startCount(1234430045)"
               />   -->
               1,548,314,962
-              <img src="@/assets/icons/transaction.png" alt="" class="ml-4 img-rotate " width="45px" height="45px"></p>
+              <img src="@/assets/icons/transaction.png" alt="" class="img-transaction-stat img-rotate " width="45px" height="45px"></p>
             
                
              <span style=" text-align: left ">Transaction</span>
@@ -106,14 +107,14 @@
          </div>
        </div>
 
-        <div class="col-md-3">
+        <div class="col-md-3 col-sm-8 stat">
          <div class="card">
            <div class="card-body text-align-left pb-0" @mouseover="bankHover = true"
               @mouseleave="bankHover = false"> 
               <div  v-if="!bankHover" >
              <p  class="lead counter">
               <span >120</span> <span style="font-size:22px; margin-right:30px">million</span>
-              <img src="@/assets/icons/bank.png" alt="" class="ml-5  " width="45px" height="45px"></p>
+              <img src="@/assets/icons/bank.png" alt="" class="img-bank-stat" width="45px" height="45px"></p>
              <span class="subText" style="color:#f08f21">Banks & </span> <span>Mobile Wallets</span>
 
               </div>
@@ -121,7 +122,7 @@
             <div  v-if="bankHover" >
              <p  class="lead counter" style="color:#f08f21">
               <span>199</span> <span style="font-size:22px;margin-right:30px">million</span>
-              <img src="@/assets/icons/sim.png" alt="" class="ml-5  " width="45px" height="45px"></p>
+              <img src="@/assets/icons/sim.png" alt="" class="img-bank-stat" width="45px" height="45px"></p>
              <span >Banks & </span> <span style="color:#f08f21">Mobile Wallets</span>
               </div>
 
@@ -131,7 +132,7 @@
          </div>
        </div>
 
-          <div class="col-md-3">
+          <div class="col-md-3 col-sm-8 stat">
          <div class="card">
            <div class="card-body text-align-left pb-0"  @mouseover="countryHover = true"
               @mouseleave="countryHover = false"> 
@@ -141,7 +142,7 @@
                 :endVal="12"
                 :options="options"
                  @ready="startCount(12)"
-              /> Countries <font-awesome-icon icon="globe-africa"  class="ml-5"  />
+              /> Countries <img src="@/assets/icons/world.png" alt="" class="img-world-stat" width="45px" height="45px">
               <br>
               </p>
          </div>
@@ -175,11 +176,22 @@
    <footer>
  <div class="footer  p-2"  >
      <div class="row">
-       <div class="col-md-10">
-          <p style="color: white; margin-top:15px" class="text-bold"> <span style="margin-left: 350px;"><font-awesome-icon icon="envelope"  /> : trade@nsano.com </span>  <span style="margin-left: 50px;">  <font-awesome-icon icon="phone-alt"  /> : +233 2324234 </span> </p>
+       <div class="col-md-10 col-sm-7">
+         <div class="row infos">
+           <div class="col-md-6 col-sm-12">
+              <p style="color: white; margin-top:15px" class="text-bold"> <span class="envelope">
+                <font-awesome-icon icon="envelope"  /> : trade@nsano.com </span> </p>
+           </div>
+           <div class="col-md-6 col-sm-12">
+
+              <p style="color: white; margin-top:15px" class="text-bold"> <span ><font-awesome-icon icon="phone-alt"  /> : +233559689915  | 
++233559689978 </span> </p>
+           </div>
+         </div>
+        
        </div>
 
-       <div class="col-md-2 float-right">
+       <div class="col-md-2 float-right logos">
          <img src="@/assets/bog2.png" alt="" width="70px" height="70px" class="mr-3">
          <img src="@/assets/logonew.png" alt="" width="40px" height="45px">
        </div>
@@ -307,6 +319,11 @@
   }
 
 
+.statistics {
+  margin-left: 72px;
+  margin-top: -30px
+}
+
 
 
 .flag{
@@ -315,6 +332,10 @@
   margin-right: 4px;
 }
 
+
+.envelope{
+  margin-left: 350px;
+}
 .card-body  {
       padding: 5px 5px 5px 5px;
 }
@@ -449,6 +470,32 @@ header ul {
         padding-left: 20px;
     }
 
+    .logos{
+      text-align: center;
+    }
+    .stat{
+      margin-bottom: 15px;
+    }
+
+    .img-transaction-stat{
+      margin-left: 75px;
+    }
+
+    .img-bank-stat{
+      margin-left: 125px;
+    }
+
+    .img-world-stat{
+      margin-left: 100px;
+    }
+
+  
+
+    .statistics {
+ margin-left: -13px;
+  margin-top: -30px
+}
+
 .jumbotron{
   margin-left: 10px;
   text-align: center
@@ -524,11 +571,25 @@ header ul {
         z-index: 2;	
     }
 
+  .footer{
+     background-color: #f08f21; 
+     background-image: none;
+   
+  }
+
+.infos{
+  text-align: center;
+}
+
       .logo{
         margin: 20px;
         color: #f08f21;
         font-weight: 900;
   }
+
+  .envelope{
+  margin-left: 0px;
+}
     .change-bg{
         width: 550px;
         height: 540px;
