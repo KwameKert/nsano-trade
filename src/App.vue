@@ -1,96 +1,182 @@
 <template>
   <div id="app">
    <div class="row ">
-     <div class="col-md-9">
-       <div class="row">
-      <header id="desktop-menu">
-        <ul>
-            <li class="links" ><a href="#about" data-toggle="modal" data-target="#exampleModal">About</a> </li>
-            <li class="links"><a href="#work" data-toggle="modal" data-target="#exampleModal">Connect To Our Platform</a></li>
-            <li class="links"><a href="#projects" data-toggle="modal" data-target="#exampleModal">MT Direct</a></li>
-       
-        </ul>
+     <header id="desktop-menu">
+        <div class="col-md-9">
+            <div class="row mt-5">
+              
+                  <ul>
+                      <li class="links" ><a href="#about" data-toggle="modal" data-target="#exampleModal">About</a> </li>
+                      <li class="links"><a href="#work" data-toggle="modal" data-target="#exampleModal">Connect To Our Platform</a></li>
+                      <li class="links"><a href="#projects" data-toggle="modal" data-target="#exampleModal">MT Direct</a></li>
+                
+                  </ul>
+          </div>
+      
+      
+        </div>
+        <div class="col-md-3 ">
+          <div class="cool">
+            <a href="#" data-toggle="modal" data-target="#exampleModal" style="text-decoration: none"><h3 class="logo">Instant Credit</h3></a>
+          </div>
+        
+        </div>
      </header>
-       </div>
-   
-   <div class="row">
-     <div class="col-md-8 text-left" style="margin-left: 90px" >
+
+      <header id="mobile-menu">
+        <div id="menu-bar">
+            <div class="row">
+                <div class="col-3" style="    margin-top: -12px;">
+                <div id="menu" @click="changeMenu()" v-bind:class="{change: isActive}" ref="myBtn">
+				<div id="bar1" class="bar"></div>
+				<div id="bar2" class="bar"></div>
+				<div id="bar3" class="bar"></div>
+			</div>
+                </div>
+                <div class="col-9">
+                        <a href="#" data-toggle="modal" data-target="#exampleModal" style="text-decoration: none"><h3 class="logo">Instant Credit</h3></a>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-12 ">
+        <ul class="nav" id="nav" v-bind:class="{change: isActive}">
+          <li class="links" ><a href="#about" data-toggle="modal" data-target="#exampleModal" @click="closeMenu">About</a> </li>
+           <li class="links"><a href="#work" data-toggle="modal" data-target="#exampleModal" @click="closeMenu">Connect To Our Platform</a></li>
+           <li class="links"><a href="#projects" data-toggle="modal" data-target="#exampleModal" @click="closeMenu">MT Direct</a></li>
+          
+        </ul>
+                </div>
+            </div>
+			
+		</div>
+
+      </header>
+   </div>
+
+   <div class="row" style="margin-top:-200px">
+     <div class="col-md-8  col-sm-12 jumbotron"  >
        <h2 style="font-size: 40px">Send up to <span style="
     color: #f08f21;
     font-size: 50px;
     font-weight: 900;
-">$200,000 </span> <br/> a day and pay no charge for any subsequent transaction.</h2>
+">$100,000 </span> <br/> a day and pay no charge for any subsequent transaction.</h2>
 <button class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" >Learn more </button>
      </div>
-   </div>
-
-   
-     </div>
-     <div class="col-md-3 ">
-       <div class="cool">
-         <a href="#" data-toggle="modal" data-target="#exampleModal" style="text-decoration: none"><h3 class="logo">Instant Credit</h3></a>
-       </div>
-     
-     </div>
-
-
-     
    </div>
       <div class="row " style="margin-left: 72px; margin-top: 70px">
        <div class="col-md-3">
          <div class="card">
-           <div class="card-body text-align-left pb-0"> 
-             <p  class="lead counter">
-                <ICountUp
-                :delay="1000"
-                :endVal="200513466"
+           <div class="card-body text-align-left pb-0" @mouseover="transactionHover = true"
+              @mouseleave="transactionHover = false" > 
+
+             <div  v-if="!transactionHover" >
+                <p  class="lead counter">
+                <!-- <ICountUp
+                :delay="1"
+                :endVal="123213466"
                 :options="options"
                  @ready="startCount(1000000045)"
-              />  <font-awesome-icon icon="exchange-alt"  class="ml-3" /></p>
+              />   -->
+              2,348,314,962
+             <img src="@/assets/icons/transaction.png" alt="" class="ml-4 " width="45px" height="45px"></p>
              <span style="color:#f08f21; text-align: left ">Transaction</span>
+             </div>
+
+
+          <div  v-if="transactionHover" >
+            
+               <p  class="lead counter" style="color:#f08f21;">
+                <!-- <ICountUp
+                :delay="1"
+                :endVal="50023466"
+                :options="options"
+                 @ready="startCount(1234430045)"
+              />   -->
+              1,548,314,962
+              <img src="@/assets/icons/transaction.png" alt="" class="ml-4 img-rotate " width="45px" height="45px"></p>
+            
+               
+             <span style=" text-align: left ">Transaction</span>
+             </div>
+
+           
              </div>
          </div>
        </div>
 
         <div class="col-md-3">
          <div class="card">
-           <div class="card-body text-align-left pb-0"> 
-                <p  class="lead counter">
-               <ICountUp
-                :delay="1000"
-                :endVal="20513466"
-                :options="options"
-                 @ready="startCount(2513466)"
-              />
-              <font-awesome-icon icon="university"  class="ml-3" /></p>
-             <span class="subText">Banks and Mobile Wallets</span>
+           <div class="card-body text-align-left pb-0" @mouseover="bankHover = true"
+              @mouseleave="bankHover = false"> 
+              <div  v-if="!bankHover" >
+             <p  class="lead counter">
+              <span >120</span> <span style="font-size:22px; margin-right:30px">million</span>
+              <img src="@/assets/icons/bank.png" alt="" class="ml-5  " width="45px" height="45px"></p>
+             <span class="subText" style="color:#f08f21">Banks & </span> <span>Mobile Wallets</span>
+
+              </div>
+
+            <div  v-if="bankHover" >
+             <p  class="lead counter" style="color:#f08f21">
+              <span>199</span> <span style="font-size:22px;margin-right:30px">million</span>
+              <img src="@/assets/icons/sim.png" alt="" class="ml-5  " width="45px" height="45px"></p>
+             <span >Banks & </span> <span style="color:#f08f21">Mobile Wallets</span>
+              </div>
+
+
+               
              </div>
          </div>
        </div>
 
           <div class="col-md-3">
          <div class="card">
-           <div class="card-body text-align-left pb-0"> 
+           <div class="card-body text-align-left pb-0"  @mouseover="countryHover = true"
+              @mouseleave="countryHover = false"> 
               <p  class="lead counter mb-4">
                <ICountUp
                 :delay="1000"
                 :endVal="12"
                 :options="options"
                  @ready="startCount(12)"
-              /> Countries <font-awesome-icon icon="globe-africa"   />
+              /> Countries <font-awesome-icon icon="globe-africa"  class="ml-5"  />
               <br>
               </p>
-            
-             </div>
          </div>
        </div>
       
+      <div class="card mt-1  countries" v-if="countryHover" >
+       
+            <div class="row">
+            
+              <img src="@/assets/flags/cote.jpg" class="flag" alt="">
+              <img src="@/assets/flags/kenya.jpg" class="flag" alt="">
+              <img src="@/assets/flags/nigeria.jpg" class="flag" alt="">
+              <img src="@/assets/flags/tan.jpg" class="flag" alt="">
+                <img src="@/assets/flags/ghana.png" class="flag"   alt="">
+              <img src="@/assets/flags/raw.jpg" class="flag" alt="">
+            </div>
+
+            <div class="row mt-2 ">
+              <img src="@/assets/flags/sierra.jpg" class="flag"   alt="">
+              <img src="@/assets/flags/mali.png" class="flag" alt="">
+              <img src="@/assets/flags/uganda.jpg" class="flag" alt="">
+              <img src="@/assets/flags/zambia.png" class="flag" alt="">
+              <img src="@/assets/flags/cameroon.jpg" class="flag" alt="">
+              <img src="@/assets/flags/mozam.jpg" class="flag" alt="">
+            </div>
+           
+        </div>
+      </div>
      </div>
    
-   <div class="footer  p-2" >
+   <footer>
+ <div class="footer  p-2"  >
      <div class="row">
        <div class="col-md-10">
-<p style="color: white; margin-top:15px" class="text-bold"> <span style="margin-left: 350px;"><font-awesome-icon icon="envelope"  /> : trade@nsano.com </span>  <span style="margin-left: 50px;">  <font-awesome-icon icon="phone-alt"  /> : +233 2324234 </span> </p>
+          <p style="color: white; margin-top:15px" class="text-bold"> <span style="margin-left: 350px;"><font-awesome-icon icon="envelope"  /> : trade@nsano.com </span>  <span style="margin-left: 50px;">  <font-awesome-icon icon="phone-alt"  /> : +233 2324234 </span> </p>
        </div>
 
        <div class="col-md-2 float-right">
@@ -101,6 +187,8 @@
      
    </div>
 
+   </footer>
+  
 
 
    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -140,6 +228,11 @@
     },
     data() {
       return {
+        transactionHover: false,
+         isActive : false,
+        bankHover: false,
+        countryHover: false,
+
         options: {
           useEasing: true,
           useGrouping: true,
@@ -157,7 +250,19 @@
       onReady: function(instance, CountUp, val) {
         const that = this;
         instance.update(val );
-      }
+      },
+      changeMenu: function(){
+                this.isActive = !this.isActive;
+                //console.log("closed");
+            },
+            handleScroll: function(){
+               var header = document.querySelector("header");
+               header.classList.toggle("sticky",window.scrollY > 0);
+            },
+            closeMenu() {
+               const elem = this.$refs.myBtn
+            elem.click()
+            }
     }
   };
 </script>
@@ -165,12 +270,50 @@
 
 <style scoped>
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@font-face {
+    font-family: Proxima;
+    src: url("assets/font/proxima/ProximaNova-Regular.otf") format("opentype");
+}
+#mobile-menu{
+    display: none;
+}
+
+
+
   *{
     overflow-x:hidden;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Proxima';
   }
 
+  
+  .countries{
+    padding-left: 22px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+
+.jumbotron{
+  margin-left: 90px;
+  text-align: left;
+  background-color: #fff;
+}
+  .img-rotate{
+    /* -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg); */
+    transform: rotate(270deg);
+  }
+
+
+
+
+.flag{
+  width:42px; 
+  height:40px;
+  margin-right: 4px;
+}
 
 .card-body  {
       padding: 5px 5px 5px 5px;
@@ -189,7 +332,7 @@
   .footer{
      background-image: url("assets/extraFooter.png") ;
 
-    margin-top:80px;
+    margin-top:170px;
   }
 
   .iCountUp {
@@ -204,7 +347,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 30px 50px;
+    padding: 0px 0px 0px 50px;
    
     transition: 0.3s;
 }
@@ -286,18 +429,128 @@ header ul {
   }
 
   .logo{
-        margin: 220px 0px 0px 135px;
+        margin: 220px 0px 0px 155px;
         color: #f08f21;
         font-weight: 900;
   }
 
   .cool{
    background-image: url("assets/nicelogo.png") ;
-   height: 500px;
-    margin-top: -170px;
-   margin-left:-20px;
+  height: 500px;
+    margin-top: -150px;
+    margin-left: -50px;
   }
 
+
+
+@media only screen and (max-width: 600px) {
+    
+    .logo{
+        padding-left: 20px;
+    }
+
+.jumbotron{
+  margin-left: 10px;
+  text-align: center
+}
+
+    #desktop-menu{
+        display: none;
+    }
+
+
+    #mobile-menu{
+        display: block;
+        padding-top: 300px;
+    }
+
+    #menu{
+        width: 35px;
+        height: 30px;
+        margin: 30px 0 20px 20px;
+        cursor: pointer;
+        padding-top: 10px;
+    }
+    .bar{
+        height: 5px;
+        width: 100%;
+        background-color: #f08f21 !important;
+        display: block;
+        border-radius: 5px;
+        transition: 0.3s ease;
+    }
+    #bar1{
+        transform: translateY(-4px);
+    }
+    #bar3{
+        transform: translateY(4px);
+    }
+    .nav li a{
+        color: #f08f21;
+        text-decoration: none;
+    }
+    .nav li a:hover{
+        font-weight: bold;
+    }
+    .nav li{
+        list-style: none;
+        
+        text-align: center;
+        padding: 16px 0;
+    }
+    .nav{
+        padding: 0;
+        margin: 0 20px;
+        transition: 0.3s ease;
+        display: none;
+    }
+    .menu-bg, #menu-bar{
+        top: 0;
+        left: 0;
+        right: 0;
+        position: absolute;
+        background-color: #fff;
+    }
+    .menu-bg{
+        z-index: 1;
+        width: 0;
+        height: 0;
+        margin: 30px 0 20px 20px;
+        background:  #fff !important;
+        border-radius: 50%;
+        transition: 0.3s ease;
+    }
+    #menu-bar{
+        z-index: 2;	
+    }
+
+      .logo{
+        margin: 20px;
+        color: #f08f21;
+        font-weight: 900;
+  }
+    .change-bg{
+        width: 550px;
+        height: 540px;
+        transform: translate(-60%,-30%);
+    }
+    .change .bar{
+        background-color: white;
+    }
+    .change #bar1{
+        transform: translateY(4px) rotateZ(-45deg);
+    }
+    .change #bar3{
+        transform: translateY(-6px) rotate(45deg);
+    }
+    .change #bar2{
+        opacity: 0;
+    }
+    .change{
+        display: block;
+    }
+ 
+}
 
 
 
