@@ -197,8 +197,8 @@
        </div>
 
        <div class="col-md-2 float-right logos">
-         <img src="@/assets/bog2.png" alt="" width="70px" height="70px" class="mr-3">
-         <img src="@/assets/logonew.png" alt="" width="40px" height="45px">
+         <img src="@/assets/bog2.png" alt="" width="50px" height="50px" class="mr-3">
+         <img src="@/assets/logonew.png" alt="" width="30px" height="32px">
        </div>
      </div>
      
@@ -499,7 +499,7 @@
   }
 
   .footer{
-   
+    margin-top: -6px;
      background-image: url("assets/extraFooter.png") ;
     
   }
