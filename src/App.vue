@@ -99,7 +99,7 @@
               <img src="@/assets/icons/transactionnew.png" alt="" class="img-transaction-stat  " width="45px" height="45px"></p>
             
                
-             <span style=" text-align: left ">Transaction</span>
+             <span style=" text-align: left ">Transactions</span>
              </div>
 
            
