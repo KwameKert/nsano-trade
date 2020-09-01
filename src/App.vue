@@ -135,7 +135,7 @@
           <div class="col-md-3 col-sm-8 stat">
          <div class="card">
            <div class="card-body text-align-left pb-0"  @mouseover="countryHover = true"
-              @mouseleave="countryHover = false"> 
+              > 
               <p  class="lead counter mb-4">
                <ICountUp
                 :delay="1000"
@@ -148,25 +148,26 @@
          </div>
        </div>
       
-      <div class="card mt-1  countries" v-if="countryHover" >
+      <div class="card mt-1  countries" v-if="countryHover"  @mouseover="countryHover = true"
+              @mouseleave="countryHover = false">
        
             <div class="row">
             
-              <img src="@/assets/flags/cote.jpg" class="flag" alt="">
-              <img src="@/assets/flags/kenya.jpg" class="flag" alt="">
-              <img src="@/assets/flags/nigeria.jpg" class="flag" alt="">
-              <img src="@/assets/flags/tan.jpg" class="flag" alt="">
-                <img src="@/assets/flags/ghana.png" class="flag"   alt="">
-              <img src="@/assets/flags/raw.jpg" class="flag" alt="">
+              <img src="@/assets/flags/cote.jpg" class="flag" data-toggle="tooltip" data-placement="top" title="Ivory Coast">
+              <img src="@/assets/flags/kenya.jpg" class="flag" alt="" data-toggle="tooltip" data-placement="top" title="Kenya">
+              <img src="@/assets/flags/nigeria.jpg" class="flag" alt="" data-toggle="tooltip" data-placement="top" title="Nigeria">
+              <img src="@/assets/flags/tan.jpg" class="flag" alt="" data-toggle="tooltip" data-placement="top" title="Tanzania">
+                <img src="@/assets/flags/ghana.png" class="flag"   alt="" data-toggle="tooltip" data-placement="top" title="Ghana">
+              <img src="@/assets/flags/raw.jpg" class="flag" alt="" data-toggle="tooltip" data-placement="top" title="Rwanda">
             </div>
 
             <div class="row mt-2 ">
-              <img src="@/assets/flags/sierra.jpg" class="flag"   alt="">
-              <img src="@/assets/flags/mali.png" class="flag" alt="">
-              <img src="@/assets/flags/uganda.jpg" class="flag" alt="">
-              <img src="@/assets/flags/zambia.png" class="flag" alt="">
-              <img src="@/assets/flags/cameroon.jpg" class="flag" alt="">
-              <img src="@/assets/flags/mozam.jpg" class="flag" alt="">
+              <img src="@/assets/flags/sierra.jpg" class="flag"   alt="" data-toggle="tooltip" data-placement="top" title="Sierra Leone">
+              <img src="@/assets/flags/mali.png" class="flag" alt="" data-toggle="tooltip" data-placement="top" title="Mali">
+              <img src="@/assets/flags/uganda.jpg" class="flag" alt="" data-toggle="tooltip" data-placement="top" title="Uganda">
+              <img src="@/assets/flags/zambia.png" class="flag" alt="" data-toggle="tooltip" data-placement="top" title="Zambia">
+              <img src="@/assets/flags/cameroon.jpg" class="flag" alt="" data-toggle="tooltip" data-placement="top" title="Cameroon"> 
+              <img src="@/assets/flags/mozam.jpg" class="flag" alt="" data-toggle="tooltip" data-placement="top" title="Mozambique">
             </div>
            
         </div>
