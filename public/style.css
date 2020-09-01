@@ -1,5 +1,6 @@
 html, body{
-    height :100v;
+    height :105vh;
+    overflow-y: hidden;
 }
 
 

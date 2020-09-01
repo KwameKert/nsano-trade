@@ -7,8 +7,8 @@
               
                   <ul>
                       <li class="links" ><a href="#about" data-toggle="modal" data-target="#exampleModal">About</a> </li>
-                      <li class="links"><a href="#work" data-toggle="modal" data-target="#exampleModal">Connect To Our Platform</a></li>
-                      <li class="links"><a href="#projects" data-toggle="modal" data-target="#exampleModal">MT Direct</a></li>
+                      <li class="links"><a href="#work" data-toggle="modal" data-target="#connectModal">Connect To Our Platform</a></li>
+                      <li class="links"><a href="#projects" data-toggle="modal" data-target="#mtDirect">MT Direct</a></li>
                 
                   </ul>
           </div>
@@ -62,7 +62,7 @@
         font-size: 50px;
         font-weight: 900;
         ">$100,000 </span> <br/> a day and pay no charge for any subsequent transaction.</h2>
-        <button class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" >Learn more </button>
+        <button class="btn btn-warning" data-toggle="modal" data-target="#learnMore" >Learn more </button>
         </div>
    </div>
 
@@ -80,7 +80,7 @@
                 :options="options"
                  @ready="startCount(1000000045)"
               />   -->
-              2,348,314,962
+              14,363,086
              <img src="@/assets/icons/transaction.png"  alt="" class=" img-transaction-stat " width="45px" height="45px"></p>
              <span style="color:#f08f21; text-align: left ">Transactions</span>
              </div>
@@ -95,7 +95,7 @@
                 :options="options"
                  @ready="startCount(1234430045)"
               />   -->
-              1,548,314,962
+              14,363,086
               <img src="@/assets/icons/transactionnew.png" alt="" class="img-transaction-stat  " width="45px" height="45px"></p>
             
                
@@ -115,7 +115,7 @@
              <p  class="lead counter">
               <span >120</span> <span style="font-size:22px; margin-right:30px">million</span>
               <img src="@/assets/icons/bank.png" alt="" class="img-bank-stat" width="45px" height="45px"></p>
-             <span class="subText" style="color:#f08f21">Banks accounts & </span> <span>Mobile Wallets</span>
+             <span class="subText" style="color:#f08f21">Bank accounts & </span> <span>Mobile Wallets</span>
 
               </div>
 
@@ -123,7 +123,7 @@
              <p  class="lead counter" style="color:#f08f21">
               <span>199</span> <span style="font-size:22px;margin-right:30px">million</span>
               <img src="@/assets/icons/sim.png" alt="" class="img-bank-stat" width="45px" height="45px"></p>
-             <span >Banks accounts & </span> <span style="color:#f08f21">Mobile Wallets</span>
+             <span >Bank accounts & </span> <span style="color:#f08f21">Mobile Wallets</span>
               </div>
 
 
@@ -132,17 +132,13 @@
          </div>
        </div>
 
-          <div class="col-md-3 col-sm-8 stat">
-         <div class="card">
-           <div class="card-body text-align-left pb-0"  @mouseover="countryHover = true"
+          <div class="col-md-3 col-sm-8 stat holder">
+
+         <div class="card" @mouseover="countryHover = true"
+              @mouseleave="countryHover = false">
+           <div class="card-body text-align-left pb-0" 
               > 
               <p  class="lead counter mb-4">
-               <!-- <ICountUp
-                :delay="1000"
-                :endVal="12"
-                :options="options"
-                 @ready="startCount(12)"
-              />  -->
               <span v-if="!countryHover">12  Countries</span>
               <span v-if="countryHover" style="color:#f08f21">12  Countries</span>
               
@@ -150,37 +146,40 @@
               <img src="@/assets/icons/world2.png" alt="" class="img-world-stat" width="45px" height="45px" v-if="countryHover">
               <br>
               </p>
-         </div>
-       </div>
-      
-      <div class="card mt-1  countries" v-if="countryHover"  @mouseover="countryHover = true"
-              @mouseleave="countryHover = false">
-       
-            <div class="row">
-            
-              <img src="@/assets/flags/cote.jpg" class="flag" data-toggle="tooltip" data-placement="top" title="Ivory Coast">
-              <img src="@/assets/flags/kenya.jpg" class="flag" alt="" data-toggle="tooltip" data-placement="top" title="Kenya">
-              <img src="@/assets/flags/nigeria.jpg" class="flag" alt="" data-toggle="tooltip" data-placement="top" title="Nigeria">
-              <img src="@/assets/flags/tan.jpg" class="flag" alt="" data-toggle="tooltip" data-placement="top" title="Tanzania">
-                <img src="@/assets/flags/ghana.png" class="flag"   alt="" data-toggle="tooltip" data-placement="top" title="Ghana">
-              <img src="@/assets/flags/raw.jpg" class="flag" alt="" data-toggle="tooltip" data-placement="top" title="Rwanda">
-            </div>
 
-            <div class="row mt-2 ">
-              <img src="@/assets/flags/sierra.jpg" class="flag"   alt="" data-toggle="tooltip" data-placement="top" title="Sierra Leone">
-              <img src="@/assets/flags/mali.png" class="flag" alt="" data-toggle="tooltip" data-placement="top" title="Mali">
-              <img src="@/assets/flags/uganda.jpg" class="flag" alt="" data-toggle="tooltip" data-placement="top" title="Uganda">
-              <img src="@/assets/flags/zambia.png" class="flag" alt="" data-toggle="tooltip" data-placement="top" title="Zambia">
-              <img src="@/assets/flags/cameroon.jpg" class="flag" alt="" data-toggle="tooltip" data-placement="top" title="Cameroon"> 
-              <img src="@/assets/flags/mozam.jpg" class="flag" alt="" data-toggle="tooltip" data-placement="top" title="Mozambique">
-            </div>
+      </div>
+         </div>
+
+             <div class="countries" > 
+       
+                  <div class="row">
+
+                    <img src="@/assets/flags/cote.jpg" class="flag" data-toggle="tooltip" data-placement="top" title="Ivory Coast">
+                    <img src="@/assets/flags/kenya.jpg" class="flag" alt="" data-toggle="tooltip" data-placement="top" title="Kenya">
+                    <img src="@/assets/flags/nigeria.jpg" class="flag" alt="" data-toggle="tooltip" data-placement="top" title="Nigeria">
+                    <img src="@/assets/flags/tan.jpg" class="flag" alt="" data-toggle="tooltip" data-placement="top" title="Tanzania">
+                      <img src="@/assets/flags/ghana.png" class="flag"   alt="" data-toggle="tooltip" data-placement="top" title="Ghana">
+                    <img src="@/assets/flags/raw.jpg" class="flag" alt="" data-toggle="tooltip" data-placement="top" title="Rwanda">
+                  </div>
+
+                  <div class="row mt-2 ">
+                    <img src="@/assets/flags/sierra.jpg" class="flag"   alt="" data-toggle="tooltip" data-placement="top" title="Sierra Leone">
+                    <img src="@/assets/flags/mali.png" class="flag" alt="" data-toggle="tooltip" data-placement="top" title="Mali">
+                    <img src="@/assets/flags/uganda.jpg" class="flag" alt="" data-toggle="tooltip" data-placement="top" title="Uganda">
+                    <img src="@/assets/flags/zambia.png" class="flag" alt="" data-toggle="tooltip" data-placement="top" title="Zambia">
+                    <img src="@/assets/flags/cameroon.jpg" class="flag" alt="" data-toggle="tooltip" data-placement="top" title="Cameroon"> 
+                    <img src="@/assets/flags/mozam.jpg" class="flag" alt="" data-toggle="tooltip" data-placement="top" title="Mozambique">
+                  </div>
            
         </div>
-      </div>
+       </div>
+      
+      
      </div>
+
    
    <footer>
- <div class="footer  p-2"  >
+ <div class="footer "  >
      <div class="row">
        <div class="col-md-10 col-sm-7">
          <div class="row infos">
@@ -209,8 +208,8 @@
   
 
 
-   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">About Instant Credit</h5>
@@ -225,6 +224,139 @@
         <p class="lead">
  Instant Credit offers APIs directly integrated into the mobile money platforms, of MNOs and all banks via standard security protocols. This allows for direct querying and veriﬁcation of customers’ mobile money accounts (active status) and bank accounts for the speciﬁed transactions.
         </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade" id="connectModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Connect With Us</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+
+    <div class="form-group">
+    <label for="exampleInputEmail1">Full Name</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
+    
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    
+  </div>
+
+    <div class="form-group">
+    <label for="exampleInputEmail1">Address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter address">
+    
+  </div>
+    <div class="form-group">
+    <label for="exampleInputEmail1">Message</label>
+   <textarea  class="form-control" name="" id="" cols="30" rows="2"></textarea>
+    
+  </div>
+
+</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="mtDirect" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">About Instant Credit</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p class="lead">
+          With MT Direct, remittance senders are presented with a savings option every time they remit funds.
+        </p>
+     
+     <p class="lead">
+      Senders who choose the savings option will have a reduced ultimate cost whereas no-savings remittances bear the usual costs.
+     </p>
+
+      <p class="lead">
+      To send a remittance with the savings option, the sender will elect a percentage of the remittance amount to be saved on behalf of the recipient as well as a savings period. Funds are kept in an interest-bearing account with returns paid to the recipient at the end of the savings period.
+      </p>
+
+      <p class="lead">
+      To provide even more value, the product also includes an insurance policy (embedded life Insurance benefit in event of illness or death) and credit components; where repeat remittances accrue points to recipients, providing a pathway to microcredit facilities through alternate credit scoring.
+      </p>
+
+
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="learnMore" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">About Instant Credit</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <p >
+           In a bid to help ease the financial burden of our clients due to the COVID-19 pandemic, we have provided an avenue to reduce the high cost of remittance for our esteemed clients.
+        </p>
+     
+     <p >
+      We value our clients and that is why we are rewarding our existing and potential clients with this promo. Pay no fees when you transfer up to $100,000 to anywhere in Ghana.
+     </p>
+
+      <p >
+      To send a remittance with the savings option, the sender will elect a percentage of the remittance amount to be saved on behalf of the recipient as well as a savings period. Funds are kept in an interest-bearing account with returns paid to the recipient at the end of the savings period.
+      </p>
+
+  <h3>Terms and Conditions</h3>
+      <p >
+        1.  This promo only applies to wallet termination
+      </p>
+      <p >
+        2.  Promo valid for only terminations to Ghana
+      </p>
+      <p >
+        3.  MTO will need to prefund all transactions
+      </p>
+      <p >
+        4.  Charge per transaction for first $100,000 is $1
+      </p>
+      <p >
+        4.   Any emergency prefund by Nsano will attract a charge of 1$ despite value of transactions already disbursed.
+      </p>
+
+
+
+        
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -296,6 +428,13 @@
     display: none;
 }
 
+  .holder
+    { position:relative; 
+    height:200px}
+        
+  .holder .countries { position:absolute; display:none; z-index:99; }
+  .holder:hover .countries { display:block; }
+
 
 
   *{
@@ -303,11 +442,14 @@
     font-family: 'Proxima';
   }
 
+
+
   
   .countries{
-    padding-left: 22px;
+    padding-left: 30px;
     padding-top: 10px;
     padding-bottom: 10px;
+   
   }
 
 
@@ -357,10 +499,12 @@
   }
 
   .footer{
+   
      background-image: url("assets/extraFooter.png") ;
-
-    margin-top:103px;
+    
   }
+
+  
 
   .iCountUp {
     font-size: 12em;
@@ -451,6 +595,9 @@ header ul {
   }
 
 
+ .img-world-stat{
+      margin-left: 40px;
+    }
   #app{
       margin-top: 0px
   }
