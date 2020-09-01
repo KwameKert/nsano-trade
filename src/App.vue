@@ -61,7 +61,7 @@
         color: #f08f21;
         font-size: 50px;
         font-weight: 900;
-        ">$100,000 </span> <br/> a day and pay no charge for any subsequent transaction.</h2>
+        ">$100,000  a day and </span> <br/>  pay no charge for any subsequent transaction.</h2>
         <button class="btn btn-warning" data-toggle="modal" data-target="#learnMore" >Learn more </button>
         </div>
    </div>
@@ -283,7 +283,7 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">About Instant Credit</h5>
+        <h5 class="modal-title" id="exampleModalLabel">About MT Direct</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -318,7 +318,7 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">About Instant Credit</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Instant credit promo</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
