@@ -3,7 +3,7 @@
    <div class="row ">
      <header id="desktop-menu">
         <div class="col-md-9">
-            <div class="row mt-5">
+            <div class="row ">
               
                   <ul>
                       <li class="links" ><a href="#about" data-toggle="modal" data-target="#exampleModal">About</a> </li>
@@ -55,7 +55,7 @@
       </header>
    </div>
 
-   <div class="row" style="margin-top:-200px">
+   <div class="row" style="margin-top:-280px">
         <div class="col-md-8  col-sm-12 jumbotron"  >
           <h2 style="font-size: 40px">Send up to <span style="
         color: #f08f21;
@@ -82,7 +82,7 @@
               />   -->
               2,348,314,962
              <img src="@/assets/icons/transaction.png"  alt="" class=" img-transaction-stat " width="45px" height="45px"></p>
-             <span style="color:#f08f21; text-align: left ">Transaction</span>
+             <span style="color:#f08f21; text-align: left ">Transactions</span>
              </div>
 
 
@@ -96,7 +96,7 @@
                  @ready="startCount(1234430045)"
               />   -->
               1,548,314,962
-              <img src="@/assets/icons/transaction.png" alt="" class="img-transaction-stat img-rotate " width="45px" height="45px"></p>
+              <img src="@/assets/icons/transactionnew.png" alt="" class="img-transaction-stat  " width="45px" height="45px"></p>
             
                
              <span style=" text-align: left ">Transaction</span>
@@ -115,7 +115,7 @@
              <p  class="lead counter">
               <span >120</span> <span style="font-size:22px; margin-right:30px">million</span>
               <img src="@/assets/icons/bank.png" alt="" class="img-bank-stat" width="45px" height="45px"></p>
-             <span class="subText" style="color:#f08f21">Banks & </span> <span>Mobile Wallets</span>
+             <span class="subText" style="color:#f08f21">Banks accounts & </span> <span>Mobile Wallets</span>
 
               </div>
 
@@ -123,7 +123,7 @@
              <p  class="lead counter" style="color:#f08f21">
               <span>199</span> <span style="font-size:22px;margin-right:30px">million</span>
               <img src="@/assets/icons/sim.png" alt="" class="img-bank-stat" width="45px" height="45px"></p>
-             <span >Banks & </span> <span style="color:#f08f21">Mobile Wallets</span>
+             <span >Banks accounts & </span> <span style="color:#f08f21">Mobile Wallets</span>
               </div>
 
 
@@ -137,12 +137,17 @@
            <div class="card-body text-align-left pb-0"  @mouseover="countryHover = true"
               > 
               <p  class="lead counter mb-4">
-               <ICountUp
+               <!-- <ICountUp
                 :delay="1000"
                 :endVal="12"
                 :options="options"
                  @ready="startCount(12)"
-              /> Countries <img src="@/assets/icons/world.png" alt="" class="img-world-stat" width="45px" height="45px">
+              />  -->
+              <span v-if="!countryHover">12  Countries</span>
+              <span v-if="countryHover" style="color:#f08f21">12  Countries</span>
+              
+               <img src="@/assets/icons/world.png" alt="" class="img-world-stat" width="45px" height="45px" v-if="!countryHover"> 
+              <img src="@/assets/icons/world2.png" alt="" class="img-world-stat" width="45px" height="45px" v-if="countryHover">
               <br>
               </p>
          </div>
@@ -354,7 +359,7 @@
   .footer{
      background-image: url("assets/extraFooter.png") ;
 
-    margin-top:170px;
+    margin-top:103px;
   }
 
   .iCountUp {
@@ -451,7 +456,7 @@ header ul {
   }
 
   .logo{
-        margin: 220px 0px 0px 155px;
+        margin: 180px 0px 0px 155px;
         color: #f08f21;
         font-weight: 900;
   }
