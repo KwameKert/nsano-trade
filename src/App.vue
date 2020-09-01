@@ -499,7 +499,7 @@
   }
 
   .footer{
-    margin-top: -6px;
+    margin-top: 60px;
      background-image: url("assets/extraFooter.png") ;
     
   }
