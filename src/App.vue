@@ -235,7 +235,7 @@
 
 
 <div class="modal fade" id="connectModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
+  <div class="modal-dialog ">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Connect With Us</h5>
@@ -247,33 +247,52 @@
         <form>
 
     <div class="form-group">
-    <label for="exampleInputEmail1">Full Name</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name...">
     
   </div>
   <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email...">
     
   </div>
 
     <div class="form-group">
-    <label for="exampleInputEmail1">Address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter address">
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Address...">
     
   </div>
     <div class="form-group">
-    <label for="exampleInputEmail1">Message</label>
-   <textarea  class="form-control" name="" id="" cols="30" rows="2"></textarea>
-    
+      <input type="message" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Message...">
   </div>
 
 </form>
+
+  <div >
+
+     <small><b>Documents required</b></small>
+     <br>
+     <span class="mr-4"  style="color: #f18f22 !important ">
+       <img src="@/assets/do.png" width="5px" height="5px" alt="" style="margin-right: 2px">
+       
+        <a href="https://drive.google.com/file/d/1ZXbXJvp9xdYAxVqhZ2QpKw6U5gw8P4F9/view?usp=sharing" class="form-link" target="blank" download><small class="text-muted text-bold" style="color: #f18f22 !important ">Download due diligence form   <img src="@/assets/df.png" width="10px" height="10px" alt="" style="margin-bottom:5px"></small></a>
+     </span>
+     <span>
+       <img src="@/assets/do.png" width="5px" height="5px" alt=""> <small class="text-muted text-bold">Copy of remittance liscence</small>
+     </span>
+     <br>
+     <span class="mr-3">
+       <img src="@/assets/do.png" width="5px" height="5px" alt=""> <small class="text-muted text-bold">Company registration documents</small>
+     </span>
+     <span>
+       <img src="@/assets/do.png" width="5px" height="5px" alt=""> <small class="text-muted text-bold">IDs of company directors</small>
+     </span>
+
+  </div>
+  
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        
 
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary cancel-button">Submit</button>
+  <button type="button" class="btn btn-secondary  send-button" data-dismiss="modal">Cancel</button>
       </div>
     </div>
   </div>
@@ -314,6 +333,8 @@
     </div>
   </div>
 </div>
+
+
 <div class="modal fade" id="learnMore" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
@@ -382,6 +403,7 @@
          isActive : false,
         bankHover: false,
         countryHover: false,
+       // item: {title: 'Upload Template', loc: require('../assets/form.docx')},
 
         options: {
           useEasing: true,
@@ -428,6 +450,14 @@
     display: none;
 }
 
+.footer-button{
+      border-radius: 17px;
+}
+
+.modal-footer{
+  justify-content: flex-start;
+}
+
   .holder
     { position:relative; 
     height:200px}
@@ -472,6 +502,9 @@
   margin-top: -30px
 }
 
+.form-control{
+  border-radius: 60px;
+}
 
 
 .flag{
@@ -480,6 +513,9 @@
   margin-right: 4px;
 }
 
+.form-link{
+  text-decoration: none;
+}
 
 .envelope{
   margin-left: 350px;
@@ -499,11 +535,40 @@
   }
 
   .footer{
-     margin-top: 30px;
+     margin-top: 60px;
      background-image: url("assets/extraFooter.png") ;
     
   }
 
+  .send-button{
+    border-radius: 20px;
+    border-color: #f18f22;
+    color: #fff;
+    background-color: #f18f22;
+  }
+
+
+  .send-button:hover {
+    border-radius: 20px;
+    border-color: #f18f22;
+    background-color: #fff;
+    color: #f18f22;
+  }
+
+  .cancel-button:hover{
+    border-radius: 20px;
+    border-color: #f18f22;
+    color: #fff;
+    background-color: #f18f22;
+  }
+
+
+  .cancel-button {
+    border-radius: 20px;
+    border-color: #f18f22;
+    color: #f18f22;
+    background-color: #fff;
+  }
   
 
   .iCountUp {
