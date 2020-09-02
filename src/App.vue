@@ -61,7 +61,7 @@
         color: #f08f21;
         font-size: 50px;
         font-weight: 900;
-        ">$100,000  a day and </span> <br/>  pay no charge for any subsequent transaction.</h2>
+        ">$100,000   </span> a day and <br/>  pay no charge for any subsequent transaction.</h2>
         <button class="btn btn-warning" data-toggle="modal" data-target="#learnMore" >Learn more </button>
         </div>
    </div>
