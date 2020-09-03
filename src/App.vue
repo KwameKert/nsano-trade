@@ -235,6 +235,7 @@
 
 
 <div class="modal fade" id="connectModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <form  @submit.prevent="processForm">
   <div class="modal-dialog ">
     <div class="modal-content">
       <div class="modal-header">
@@ -244,26 +245,26 @@
         </button>
       </div>
       <div class="modal-body">
-        <form>
+      
 
     <div class="form-group">
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name...">
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name..." v-model="contactDetails.name">
     
   </div>
   <div class="form-group">
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email...">
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email..." v-model="contactDetails.email">
     
   </div>
 
     <div class="form-group">
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Address...">
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Address..." v-model="contactDetails.address">
     
   </div>
     <div class="form-group">
-      <input type="message" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Message...">
+      <input type="message" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Message..." v-model="contactDetails.message">
   </div>
 
-</form>
+
 
   <div >
 
@@ -275,7 +276,7 @@
         <a href="https://drive.google.com/file/d/1ZXbXJvp9xdYAxVqhZ2QpKw6U5gw8P4F9/view?usp=sharing" class="form-link" target="blank" download><small class="text-muted text-bold" style="color: #f18f22 !important ">Download due diligence form   <img src="@/assets/df.png" width="10px" height="10px" alt="" style="margin-bottom:5px"></small></a>
      </span>
      <span>
-       <img src="@/assets/do.png" width="5px" height="5px" alt=""> <small class="text-muted text-bold">Copy of remittance liscence</small>
+       <img src="@/assets/do.png" width="5px" height="5px" alt=""> <small class="text-muted text-bold">Copy of remittance licence</small>
      </span>
      <br>
      <span class="mr-3">
@@ -286,7 +287,7 @@
      </span>
 
   </div>
-  
+ 
       </div>
       <div class="modal-footer">
         
@@ -295,7 +296,9 @@
   <button type="button" class="btn btn-secondary  send-button" data-dismiss="modal">Cancel</button>
       </div>
     </div>
+     
   </div>
+   </form>
 </div>
 
 <div class="modal fade" id="mtDirect" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -391,6 +394,7 @@
 
 
 <script type="text/babel">
+   const sgMail = require('@sendgrid/mail');
   import ICountUp from 'vue-countup-v2';
   export default {
     name: 'App',
@@ -404,7 +408,12 @@
         bankHover: false,
         countryHover: false,
        // item: {title: 'Upload Template', loc: require('../assets/form.docx')},
-
+        contactDetails: {
+                email: '',
+                name: '',
+                address: '',
+                message: '',
+            },
         options: {
           useEasing: true,
           useGrouping: true,
@@ -434,6 +443,18 @@
             closeMenu() {
                const elem = this.$refs.myBtn
             elem.click()
+            },
+            processForm(){
+              console.log(this.contactDetails)
+                sgMail.setApiKey('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');
+                const msg = {
+                  to: 'kasante@gmail.com',
+                  from: this.contactDetails.email,
+                  subject: 'Connecting to APi',
+                  text: `Address: ${this.contactDetails.address} \n  Message: ${this.contactDetails.message}`,
+                  html: '<strong>and easy to do anywhere, even with Node.js</strong>',
+                };
+                sgMail.send(msg);
             }
     }
   };
