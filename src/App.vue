@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-   <div class="row ">
+    <div class="content">
+ <div class="row ">
      <header id="desktop-menu">
         <div class="col-md-9">
             <div class="row ">
@@ -176,6 +177,8 @@
       
       
      </div>
+    </div>
+  
 
    
    <footer>
@@ -446,15 +449,23 @@
             },
             processForm(){
               console.log(this.contactDetails)
-                sgMail.setApiKey('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');
-                const msg = {
-                  to: 'kasante@gmail.com',
-                  from: this.contactDetails.email,
-                  subject: 'Connecting to APi',
-                  text: `Address: ${this.contactDetails.address} \n  Message: ${this.contactDetails.message}`,
-                  html: '<strong>and easy to do anywhere, even with Node.js</strong>',
-                };
-                sgMail.send(msg);
+
+              Email.send({
+              // Host : "smtp.elasticemail.com",
+              // Username : "kasante@seso.global",
+              // Password : "4020810D0E2DD4D2AB8C180447C570441F0A",
+              SecureToken : "88917e3b-8a91-4f6d-8edd-2f0899b0885b",
+              To : 'kwamekert@gmail.com',
+              From : `kasante@seso.global`,
+              Subject : "Connect with our api",
+              Body : `Name: ${this.contactDetails.name} \n Address: ${this.contactDetails.address} \n Message: ${this.contactDetails.message}`
+          }).then(
+            message => {
+              this.$alert("Message sent successfull.");
+              this.contactDetails = {}
+            }
+          );
+
             }
     }
   };
@@ -469,6 +480,18 @@
 }
 #mobile-menu{
     display: none;
+}
+
+
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+.content {
+  flex: 1 0 auto;
 }
 
 .footer-button{
@@ -555,11 +578,7 @@
         box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
   }
 
-  .footer{
-     margin-top: 60px;
-     background-image: url("assets/extraFooter.png") ;
-    
-  }
+ 
 
   .send-button{
     border-radius: 20px;
@@ -701,6 +720,14 @@ header ul {
     margin-left: -50px;
   }
 
+
+.footer {
+    width:100%;
+    position:fixed;
+    bottom:0;
+     background-image: url("assets/extraFooter.png") ;
+    
+}
 
 
 @media only screen and (max-width: 600px) {
