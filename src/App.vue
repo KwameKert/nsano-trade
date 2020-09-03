@@ -43,9 +43,9 @@
             <div class="row">
                 <div class="col-12 ">
         <ul class="nav" id="nav" v-bind:class="{change: isActive}">
-          <li class="links" ><a href="#about" data-toggle="modal" data-target="#exampleModal" @click="closeMenu">About</a> </li>
-           <li class="links"><a href="#work" data-toggle="modal" data-target="#exampleModal" @click="closeMenu">Connect To Our Platform</a></li>
-           <li class="links"><a href="#projects" data-toggle="modal" data-target="#exampleModal" @click="closeMenu">MT Direct</a></li>
+          <li class="links" ><a href="#" data-toggle="modal" data-target="#exampleModal" @click="closeMenu">About</a> </li>
+           <li class="links"><a href="#" data-toggle="modal" data-target="#connectModal" @click="closeMenu">Connect To Our Platform</a></li>
+           <li class="links"><a href="#" data-toggle="modal" data-target="#mtDirect" @click="closeMenu">MT Direct</a></li>
           
         </ul>
                 </div>
@@ -181,7 +181,7 @@
   
 
    
-   <footer>
+
  <div class="footer "  >
      <div class="row">
        <div class="col-md-10 col-sm-7">
@@ -207,12 +207,11 @@
      
    </div>
 
-   </footer>
   
 
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">About Instant Credit</h5>
@@ -239,7 +238,7 @@
 
 <div class="modal fade" id="connectModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <form  @submit.prevent="processForm">
-  <div class="modal-dialog ">
+  <div class="modal-dialog modal-dialog-centered ">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Connect With Us</h5>
@@ -305,7 +304,7 @@
 </div>
 
 <div class="modal fade" id="mtDirect" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">About MT Direct</h5>
@@ -454,9 +453,9 @@
               // Host : "smtp.elasticemail.com",
               // Username : "kasante@seso.global",
               // Password : "4020810D0E2DD4D2AB8C180447C570441F0A",
-              SecureToken : "88917e3b-8a91-4f6d-8edd-2f0899b0885b",
-              To : 'kwamekert@gmail.com',
-              From : `kasante@seso.global`,
+              SecureToken : "3974168b-b49a-4a9f-8fcb-e4cf1e2ca31b",
+              To : `j.agbotse@nsano.com`,
+              From : `trade@nsano.com`,
               Subject : "Connect with our api",
               Body : `Name: ${this.contactDetails.name} \n Address: ${this.contactDetails.address} \n Message: ${this.contactDetails.message}`
           }).then(
@@ -485,6 +484,7 @@
 
 html, body {
   height: 100%;
+  overflow-y: hidden;
 }
 body {
   display: flex;
@@ -732,6 +732,22 @@ header ul {
 
 @media only screen and (max-width: 600px) {
     
+
+  *{
+    overflow-y: scroll;
+    font-family: 'Proxima';
+  }
+    html,body{
+         font-family: 'Proxima';
+      overflow-y: visible;
+        height: 110%;
+    }
+
+    .jumbotron{
+      margin-top: 20px;
+      text-align: left;
+      background-color: #fff;
+}
     .logo{
         padding-left: 20px;
     }
@@ -840,7 +856,8 @@ header ul {
   .footer{
      background-color: #f08f21; 
      background-image: none;
-   
+      width:100%;
+      position:relative;
   }
 
 .infos{
@@ -876,6 +893,14 @@ header ul {
     .change{
         display: block;
     }
+
+     /* .holder
+    { position:relative; 
+    height:0}
+        
+
+  .holder .countries { position:relative;  }
+  .holder:hover .countries { display:block; } */
  
 }
 
