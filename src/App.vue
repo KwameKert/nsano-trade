@@ -396,7 +396,6 @@
 
 
 <script type="text/babel">
-   const sgMail = require('@sendgrid/mail');
   import ICountUp from 'vue-countup-v2';
   export default {
     name: 'App',
@@ -453,11 +452,30 @@
               // Host : "smtp.elasticemail.com",
               // Username : "kasante@seso.global",
               // Password : "4020810D0E2DD4D2AB8C180447C570441F0A",
-              SecureToken : "88917e3b-8a91-4f6d-8edd-2f0899b0885b",
-              To : `kwamekert@gmail.com`,
-              From : `kasante@seso.global`,
+              SecureToken : "59448dc5-bafe-4b00-aceb-a8332ffe47d5",
+              To : 'tomriddle477@gmail.com',
+              From : `kwamekert@gmail.com`,
               Subject : "Connect with our api",
-              Body : `Name: ${this.contactDetails.name} \n Address: ${this.contactDetails.address} \n Message: ${this.contactDetails.message}`
+              Body : `<html>
+              <head>
+              <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet"></head>
+              <body>
+          
+              <div style="text-align: center; font-family: 'sans-serif'">
+                 <p> ${this.contactDetails.message}</p><br>
+                <p><b>Name: </b> ${this.contactDetails.name} </p>
+                 <p><b> Address: </b>${this.contactDetails.address}</p>
+                 <p><b> Email:  </b>${this.contactDetails.email}</p>
+
+                 <br>
+                 <br>
+                 <p>If you did not request this action, please ignore this email Cheers</p>
+
+              </div>
+
+
+              </body>
+              </html>`
 
               
           }).then(
