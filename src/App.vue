@@ -453,11 +453,13 @@
               // Host : "smtp.elasticemail.com",
               // Username : "kasante@seso.global",
               // Password : "4020810D0E2DD4D2AB8C180447C570441F0A",
-              SecureToken : "3974168b-b49a-4a9f-8fcb-e4cf1e2ca31b",
-              To : `j.agbotse@nsano.com`,
-              From : `trade@nsano.com`,
+              SecureToken : "88917e3b-8a91-4f6d-8edd-2f0899b0885b",
+              To : `kwamekert@gmail.com`,
+              From : `kasante@seso.global`,
               Subject : "Connect with our api",
               Body : `Name: ${this.contactDetails.name} \n Address: ${this.contactDetails.address} \n Message: ${this.contactDetails.message}`
+
+              
           }).then(
             message => {
               this.$alert("Message sent successfull.");
