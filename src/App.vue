@@ -452,16 +452,17 @@
               // Host : "smtp.elasticemail.com",
               // Username : "kasante@seso.global",
               // Password : "4020810D0E2DD4D2AB8C180447C570441F0A",
-              SecureToken : "59448dc5-bafe-4b00-aceb-a8332ffe47d5",
-              To : 'tomriddle477@gmail.com',
-              From : `kwamekert@gmail.com`,
+             //SecureToken : "59448dc5-bafe-4b00-aceb-a8332ffe47d5",
+              SecureToken : "1fc3c14c-d421-4773-b672-b0884b161b28",
+              To : 'trade@nsano.com',
+              From : `trade@nsano.com`,
               Subject : "Connect with our api",
               Body : `<html>
               <head>
-              <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet"></head>
+            
               <body>
           
-              <div style="text-align: center; font-family: 'sans-serif'">
+              <div style="font-family: 'sans-serif'; font-size: 16px">
                  <p> ${this.contactDetails.message}</p><br>
                 <p><b>Name: </b> ${this.contactDetails.name} </p>
                  <p><b> Address: </b>${this.contactDetails.address}</p>
@@ -480,7 +481,7 @@
               
           }).then(
             message => {
-              this.$alert("Message sent successfull.");
+              this.$alert("Message sent successfully.");
               this.contactDetails = {}
             }
           );
